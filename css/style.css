@@ -48,6 +48,7 @@ img {
         text-decoration: underline;
         text-decoration-color: #5094f2;
         text-decoration-thickness: 2px;
+        box-shadow: 10px 7px 9px 0px #d1d7e059;
     }
 }
 
@@ -75,7 +76,7 @@ h1 {
 .popularCircle {
     display: flex;
     padding-bottom: 20px;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 60px;
     
 }
@@ -85,30 +86,98 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background-color: #5094f2;
+    background-image: url("../media/edit-256.png");
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position: center;
 }
 
 .popCircle:nth-child(2) {
     background-color: #d94748;
+    background-image: url("../media/desktop-256.png");
 }
 
 .popCircle:nth-child(3) {
     background-color: #ebbb11;
+    background-image: url("../media/shopping-basket-256.png");
 }
 
 .popInfo {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     text-align: center;
+    gap: 3rem;
 
 }
 
+.popSize {
+    width: 24%;
+}
+
+.popInfo h3 {
+    color: #6da6f4;
+}
+
+.popInfo p {
+    color: #c5c5c5;
+}
+
+.shoppingInfo {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    margin-left: 135px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    gap: 3rem;
+}
+
+.blueCart img {
+    width: 350px;
+    height: 250px;
+}
+
+.blueCart h2 {
+    font-size: xx-large;
+}
+
+
+.bulletInfo {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.bulletInfo ul {
+    padding: 0px;
+}
+
+.bulletInfo li {
+    list-style-type: none;
+    margin-bottom: 13px;
+    color: #c5c5c5;
+}
+
+
+footer {
+    color: #c5c5c5;
+    border-top: 1px solid #c5c5c5;
+}
+
+.footClose {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
 /* Media Query section */
 
-@media (max-width: 600px) {
+/* only goes up to 375px */
+@media only screen and (max-width: 375px) {
 
     header {
         display: block;
@@ -207,35 +276,547 @@ h1 {
 
     .phoneImage {
         position: absolute;
-        height: 50%;
         background-size: contain;
+        height: 122px;
+    }
+
+    .popularCircle {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 0;
+        position: relative;
+        gap: 4rem;
+        margin-top: 140px;
+    }
+
+    .popCircle {
+        width: 60px;
+        height: 60px;
+        background-size: 30px 30px;
+        background-position: center;
+    }
+
+    .popInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .blueCart img {
+        width: 250px;
+        height:180px;
+    }
+
+
+    .bulletInfo h3 {
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .bulletInfo li {
+        font-size: small;
+        margin-left: 30px;
     }
 }
 
-@media (max-width: 768px) {
+
+/* 375px and down */
+
+@media only screen and (min-width: 320px) {
+
+    header {
+        display: block;
+    }
+
+    .headerLogo {
+        justify-content: center;
+        font-size: x-large;
+        margin-bottom: 10px;
+    }
+
+
+    .circle {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    
+    h1 {
+        font-size: xxx-large;
+    }
+    
+    .menuContent a {
+        color: white;
+        &:hover {
+            background-color: #265ca8;
+            text-underline-offset: 0;
+        }
+    }
+
+    img {
+        margin-left: 14px;
+        margin-top: 14px;
+        width: 22px;
+        height: 22px;
+    }
+
+
+    .menuContent {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 0 0 60px;
+    }
+
+
+    .collapseMenu {
+        background-color: #5094f2;
+        padding: 10px 26px;
+        padding-bottom: 14px;
+        text-align: end;
+        position: relative;
+    }
+    
+    .collapseMenu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .collapseMenu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+    
+    .collapseMenu label {
+        display: block;
+        cursor:pointer;
+        background: url("../media/plus-3-256.png")no-repeat center;
+        background-size: 40px;
+        padding: 10px 7px 15px 7px;
+        height: 20px;
+    }
+
+    input#checkBox {
+          display: none;
+    }
+
+     input:checked +label {
+        background-image: url("../media/x-mark-256.png");
+        background-size: 40px;
+
+    }
+
+
+     input:checked ~ label { 
+        background-image: url("../media/x-mark-256.png");
+        background-size: 40px;
+
+    }
+
+
+    input:checked ~ .menuContent {
+        max-height: 100%;
+        margin-left: 50%;
+    }
+
+    .phoneImage {
+        position: absolute;
+        background-size: contain;
+        height: 143px;
+    }
+
+    .popularCircle {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 0;
+        position: relative;
+        gap: 5rem;
+        margin-top: 155px;
+    }
+
+    .popCircle {
+        width: 60px;
+        height: 60px;
+        background-size: 30px 30px;
+        background-position: center;
+    }
+
+    .popInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .blueCart img {
+        width: 250px;
+        height:180px;
+    }
+
+
+    .bulletInfo h3 {
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .bulletInfo li {
+        font-size: small;
+        margin-left: 10px;
+    }
+}
+
+/* /
+@media only screen and (min-width: 766px) {
+
+    header {
+        display: block;
+    }
+
+    .headerLogo {
+        justify-content: center;
+        font-size: x-large;
+        margin-bottom: 10px;
+    }
+
+
+    .circle {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    
+    h1 {
+        font-size: xxx-large;
+    }
+    
+    .menuContent a {
+        color: white;
+        &:hover {
+            background-color: #265ca8;
+            text-underline-offset: 0;
+        }
+    }
+
+    img {
+        margin-left: 14px;
+        margin-top: 14px;
+        width: 22px;
+        height: 22px;
+    }
+
+
+    .menuContent {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 0 0 60px;
+    }
+
+
+    .collapseMenu {
+        background-color: #5094f2;
+        padding: 10px 26px;
+        padding-bottom: 14px;
+        text-align: end;
+        position: relative;
+    }
+    
+    .collapseMenu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .collapseMenu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+    
+    .collapseMenu label {
+        display: block;
+        cursor:pointer;
+        background: url("../media/plus-3-256.png")no-repeat center;
+        background-size: 40px;
+        padding: 10px 7px 15px 7px;
+        height: 20px;
+    }
+
+    input#checkBox {
+          display: none;
+    }
+
+     input:checked +label {
+        background-image: url("../media/x-mark-256.png");
+        background-size: 40px;
+
+    }
+
+
+     input:checked ~ label { 
+        background-image: url("../media/x-mark-256.png");
+        background-size: 40px;
+
+    }
+
+
+    input:checked ~ .menuContent {
+        max-height: 100%;
+        margin-left: 50%;
+    }
+
+    .phoneImage {
+        position: absolute;
+        background-size: contain;
+        height: 294px;
+    }
+
+    .popularCircle {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 0;
+        position: relative;
+        gap: 8rem;
+        margin-top: 325px;
+    }
+
+    .popCircle {
+        width: 110px;
+        height: 110px;
+        background-size: 50px 50px;
+        background-position: center;
+    }
+
+    .popInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin: 0px;
+        gap: 0;
+    }
+
+    .blueCart {
+        margin-left: 30px;
+    }
+
+    .blueCart img {
+        width: 250px;
+        height:180px;
+    }
+
+
+    .bulletInfo h3 {
+        margin-left: 29px;
+        font-size: x-large;
+    }
+
+    .bulletInfo li {
+        font-size: small;
+        margin-left: 30px;
+    }
+}
+
+
+
+@media only screen (min-width: 768px) {
 
     .phoneImage {
         background-size: contain;
     }
 }
 
-@media (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
 
-    .phoneImage {
-        background-size: contain;
+    header {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: baseline;
+        gap: 20rem;
     }
-}
 
-@media (max-width: 1440px) {
+    .headerLogo {
+        align-items: flex-end;
+    }
+
+    .circle {
+        height: 60px;
+        width: 60px;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        margin-left: 15px;
+        margin-top: 14px;
+    }
+
+    h1 {
+        font-size: xxx-large;
+    }
+
+    .menuContent a {
+        font-size: x-large;
+    }
+    
     .phoneImage {
         background-position: center;
         background-size: contain;
     }
+
+    .popularCircle {
+        display: flex;
+        justify-content: center;
+        gap: 25rem;
+    }
+
+    .popInfo {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .popSize {
+        width: 21%;
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 30%;
+        gap: 5rem;
+    }
 }
 
-@media (max-width: 2560px) {
+@media screen and (min-width: 1440px) {
     .phoneImage {
         background-position: center;
         background-size: contain;
+    }
+    .menuContent {
+        margin-right: 20px;
+    }
+
+    .menuContent a {
+        font-size: xx-large;
+    }
+    
+    .phoneImage {
+        background-position: center;
+        background-size: contain;
+    }
+
+    .popularCircle {
+        display: flex;
+        justify-content: center;
+        gap: 10rem;
+    }
+
+    .popInfo {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .popSize {
+        width: 20%;
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 18%;
+        gap: 3rem;
+    }
+}
+/* /
+@media screen and (max-width: 2560px) {
+    
+    header {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: baseline;
+        gap: 27rem;
+    }
+
+    .headerLogo {
+        align-items: flex-end;
+    }
+
+    .circle {
+        height: 60px;
+        width: 60px;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        margin-left: 15px;
+        margin-top: 14px;
+    }
+
+    h1 {
+        font-size: xxx-large;
+    }
+
+    .menuContent {
+        margin-right: 20px;
+    }
+
+    .menuContent a {
+        font-size: xx-large;
+    }
+    
+    .phoneImage {
+        background-position: center;
+        background-size: contain;
+    }
+
+    .popularCircle {
+        display: flex;
+        justify-content: center;
+        gap: 25rem;
+    }
+
+    .popInfo {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .popSize {
+        width: 21%;
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 30%;
+        gap: 5rem;
     }
 }
