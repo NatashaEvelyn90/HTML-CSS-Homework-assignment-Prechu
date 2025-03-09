@@ -11,6 +11,7 @@ header {
     justify-content: space-evenly;
     align-items: flex-end;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .headerLogo {
@@ -176,8 +177,8 @@ footer {
 
 /* Media Query section */
 
-/* only goes up to 375px */
-@media only screen and (max-width: 375px) {
+/* works for sizes 766px and smaller/down */
+@media only screen and (max-width: 766px) {
 
     header {
         display: block;
@@ -276,19 +277,14 @@ footer {
 
     .phoneImage {
         position: absolute;
-        background-size: contain;
-        height: 122px;
+        background-size: 100%;
     }
 
     .popularCircle {
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        margin-top: 0;
-        position: relative;
-        gap: 4rem;
-        margin-top: 140px;
+        gap: 2rem;
+        margin-top: 45%;
     }
 
     .popCircle {
@@ -298,11 +294,15 @@ footer {
         background-position: center;
     }
 
+
     .popInfo {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
+        justify-content: space-evenly;
+        gap: .5rem;
     }
+
 
     .shoppingInfo {
         display: flex;
@@ -324,324 +324,87 @@ footer {
 
     .bulletInfo li {
         font-size: small;
-        margin-left: 30px;
+        margin-left: 16px;
     }
 }
 
 
-/* 375px and down */
 
-@media only screen and (min-width: 320px) {
 
+
+
+@media only screen and (min-width: 2560px) {
+    
     header {
-        display: block;
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: baseline;
+        gap: 1rem;
     }
 
     .headerLogo {
-        justify-content: center;
-        font-size: x-large;
-        margin-bottom: 10px;
+        align-items: flex-end;
+        margin-right: 10%;
     }
-
 
     .circle {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-    }
-    
-    h1 {
-        font-size: xxx-large;
-    }
-    
-    .menuContent a {
-        color: white;
-        &:hover {
-            background-color: #265ca8;
-            text-underline-offset: 0;
-        }
+        height: 60px;
+        width: 60px;
     }
 
     img {
-        margin-left: 14px;
+        width: 30px;
+        height: 30px;
+        margin-left: 15px;
         margin-top: 14px;
-        width: 22px;
-        height: 22px;
     }
 
+    h1 {
+        font-size: xxx-large;
+    }
 
     .menuContent {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0 0 0 60px;
+        margin-left: 10%;
+        width: 110%;
     }
 
-
-    .collapseMenu {
-        background-color: #5094f2;
-        padding: 10px 26px;
-        padding-bottom: 14px;
-        text-align: end;
-        position: relative;
+    .menuContent a {
+        font-size: xx-large;
     }
     
-    .collapseMenu ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    .collapseMenu a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-    }
-    
-    .collapseMenu label {
-        display: block;
-        cursor:pointer;
-        background: url("../media/plus-3-256.png")no-repeat center;
-        background-size: 40px;
-        padding: 10px 7px 15px 7px;
-        height: 20px;
-    }
-
-    input#checkBox {
-          display: none;
-    }
-
-     input:checked +label {
-        background-image: url("../media/x-mark-256.png");
-        background-size: 40px;
-
-    }
-
-
-     input:checked ~ label { 
-        background-image: url("../media/x-mark-256.png");
-        background-size: 40px;
-
-    }
-
-
-    input:checked ~ .menuContent {
-        max-height: 100%;
-        margin-left: 50%;
-    }
-
     .phoneImage {
-        position: absolute;
-        background-size: contain;
-        height: 143px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50% 100%;
     }
 
     .popularCircle {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
         justify-content: center;
-        margin-top: 0;
-        position: relative;
+        gap: 25rem;
+    }
+
+    .popInfo {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .popSize {
+        width: 21%;
+    }
+
+    .shoppingInfo {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 30%;
         gap: 5rem;
-        margin-top: 155px;
-    }
-
-    .popCircle {
-        width: 60px;
-        height: 60px;
-        background-size: 30px 30px;
-        background-position: center;
-    }
-
-    .popInfo {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        
-    }
-
-    .shoppingInfo {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        margin: 0px;
-    }
-
-    .blueCart img {
-        width: 250px;
-        height:180px;
-    }
-
-
-    .bulletInfo h3 {
-        text-align: center;
-        font-size: x-large;
-    }
-
-    .bulletInfo li {
-        font-size: small;
-        margin-left: 10px;
-    }
-}
-
-/* /
-@media only screen and (min-width: 766px) {
-
-    header {
-        display: block;
-    }
-
-    .headerLogo {
-        justify-content: center;
-        font-size: x-large;
-        margin-bottom: 10px;
-    }
-
-
-    .circle {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-    }
-    
-    h1 {
-        font-size: xxx-large;
-    }
-    
-    .menuContent a {
-        color: white;
-        &:hover {
-            background-color: #265ca8;
-            text-underline-offset: 0;
-        }
-    }
-
-    img {
-        margin-left: 14px;
-        margin-top: 14px;
-        width: 22px;
-        height: 22px;
-    }
-
-
-    .menuContent {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0 0 0 60px;
-    }
-
-
-    .collapseMenu {
-        background-color: #5094f2;
-        padding: 10px 26px;
-        padding-bottom: 14px;
-        text-align: end;
-        position: relative;
-    }
-    
-    .collapseMenu ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    .collapseMenu a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-    }
-    
-    .collapseMenu label {
-        display: block;
-        cursor:pointer;
-        background: url("../media/plus-3-256.png")no-repeat center;
-        background-size: 40px;
-        padding: 10px 7px 15px 7px;
-        height: 20px;
-    }
-
-    input#checkBox {
-          display: none;
-    }
-
-     input:checked +label {
-        background-image: url("../media/x-mark-256.png");
-        background-size: 40px;
-
-    }
-
-
-     input:checked ~ label { 
-        background-image: url("../media/x-mark-256.png");
-        background-size: 40px;
-
-    }
-
-
-    input:checked ~ .menuContent {
-        max-height: 100%;
-        margin-left: 50%;
-    }
-
-    .phoneImage {
-        position: absolute;
-        background-size: contain;
-        height: 294px;
-    }
-
-    .popularCircle {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        margin-top: 0;
-        position: relative;
-        gap: 8rem;
-        margin-top: 325px;
-    }
-
-    .popCircle {
-        width: 110px;
-        height: 110px;
-        background-size: 50px 50px;
-        background-position: center;
-    }
-
-    .popInfo {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-    }
-
-    .shoppingInfo {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        margin: 0px;
-        gap: 0;
-    }
-
-    .blueCart {
-        margin-left: 30px;
-    }
-
-    .blueCart img {
-        width: 250px;
-        height:180px;
-    }
-
-
-    .bulletInfo h3 {
-        margin-left: 29px;
-        font-size: x-large;
-    }
-
-    .bulletInfo li {
-        font-size: small;
-        margin-left: 30px;
     }
 }
 
 
-
+/*  *
 @media only screen (min-width: 768px) {
 
     .phoneImage {
@@ -751,72 +514,5 @@ footer {
         justify-content: flex-start;
         margin-left: 18%;
         gap: 3rem;
-    }
-}
-/* /
-@media screen and (max-width: 2560px) {
-    
-    header {
-        display: flex;
-        margin-bottom: 20px;
-        justify-content: center;
-        align-items: baseline;
-        gap: 27rem;
-    }
-
-    .headerLogo {
-        align-items: flex-end;
-    }
-
-    .circle {
-        height: 60px;
-        width: 60px;
-    }
-
-    img {
-        width: 30px;
-        height: 30px;
-        margin-left: 15px;
-        margin-top: 14px;
-    }
-
-    h1 {
-        font-size: xxx-large;
-    }
-
-    .menuContent {
-        margin-right: 20px;
-    }
-
-    .menuContent a {
-        font-size: xx-large;
-    }
-    
-    .phoneImage {
-        background-position: center;
-        background-size: contain;
-    }
-
-    .popularCircle {
-        display: flex;
-        justify-content: center;
-        gap: 25rem;
-    }
-
-    .popInfo {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .popSize {
-        width: 21%;
-    }
-
-    .shoppingInfo {
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 30%;
-        gap: 5rem;
     }
 }
